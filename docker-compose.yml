@@ -1,0 +1,34 @@
+version: "3.7"
+
+
+services:
+
+  maildev:
+    image: djfarrelly/maildev
+    container_name: "maildev"
+    restart: unless-stopped
+    ports:
+      - "7025:25"
+      - "7080:80"
+
+  phpdev:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    container_name: "phpdev"
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Zurich"
+      SMTP_SERVER: "maildev"
+      SMTP_PORT: 7025
+      MAIL_FROM: "webdev@docker.local"
+    volumes:
+      - ./.docker/php/msmtprc:/etc/msmtprc:ro
+      - ./code:/opt/code
+    expose:
+      - 9000
+    links:
+      - maildev:maildev
