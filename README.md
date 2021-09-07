@@ -5,6 +5,11 @@
 
 **Since everything that has to do with the stack, only runs in the container, you have to put the commands into the corresponding container.**
 
+* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a set of two PHP scripts; the main `phpcs` script that tokenizes PHP, JavaScript and CSS files to detect violations of a defined coding standard, and a second `phpcbf` script to automatically correct coding standard violations.
+* [phpDocumentor](https://www.phpdoc.org/) is the de-facto documentation application for PHP projects.
+* [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
+* [Xdebug](https://xdebug.org/) - Debugger and Profiler Tool for PHP
+
 ## Useful commands
 
 To start/stop the stack, enter the following command in the terminal:
@@ -34,6 +39,16 @@ docker exec -i phpdev php example.php
 ```
 
 ## Visual Studio Code integration
+
+Add following command into your vscode settings.json:
+
+```json
+    "phpcs.executablePath": "docker exec -i phpdev phpcs",
+    "php.executablePath": "docker exec -i phpdev php",
+    "php.validate.executablePath": "docker exec -i phpdev php"
+```
+
+## Host integration
 
 In order to call `php`, `phpcbf` or `phpcs` we add some custom scripts into `/usr/local/bin`.
 
