@@ -10,8 +10,8 @@
 To start/stop the stack, enter the following command in the terminal:
 
 ```bash
-docker-compose -f "docker-compose.yml" up -d
-docker-compose -f "docker-compose.yml" down
+docker-compose up -d
+docker-compose down
 ```
 
 To **open a shell** in the application's container, use:
@@ -23,7 +23,7 @@ docker exec -it <container> /bin/bash
 To **test if email works**
 
 ```bash
-echo -n 'Subject: test\n\nTesting Email' | sendmail -v testuser@localhost.local
+docker exec -i maildev echo -n 'Subject: test\n\nTesting Email' | sendmail -v testuser@localhost.local
 ```
 
 To **execute a PHP script**:
