@@ -5,6 +5,11 @@
 
 **Since everything that has to do with the stack, only runs in the container, you have to put the commands into the corresponding container.**
 
+**The local folder `code` is mapped to `/opt/code` in the phpdev container**
+**Once visual studio code is attached to the container, you can also download the files manually**
+
+## Installed utilities
+
 * [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a set of two PHP scripts; the main `phpcs` script that tokenizes PHP, JavaScript and CSS files to detect violations of a defined coding standard, and a second `phpcbf` script to automatically correct coding standard violations.
 * [phpDocumentor](https://www.phpdoc.org/) is the de-facto documentation application for PHP projects.
 * [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
@@ -40,12 +45,23 @@ docker exec -i phpdev php example.php
 
 ## Visual Studio Code integration
 
-Add the `bin` folder to your PATH environment variable.
+See [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+* [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
 
-Add following command into your vscode settings.json:
+## Local Host integration
 
+**Add the `bin` folder to your PATH environment variable.**
+
+If you are using powershell add following command into your vscode settings.json:
 ```json
     "phpcs.executablePath": "phpcs.bat",
     "php.executablePath": "php.bat",
     "php.validate.executablePath": "php.bat"
+```
+
+If you are using git bash add following command into your vscode settings.json:
+```json
+    "phpcs.executablePath": "phpcs",
+    "php.executablePath": "php",
+    "php.validate.executablePath": "php"
 ```
