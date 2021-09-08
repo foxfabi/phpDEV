@@ -40,54 +40,12 @@ docker exec -i phpdev php example.php
 
 ## Visual Studio Code integration
 
+Add the `bin` folder to your PATH environment variable.
+
 Add following command into your vscode settings.json:
 
 ```json
-    "phpcs.executablePath": "docker exec -i phpdev phpcs",
-    "php.executablePath": "docker exec -i phpdev php",
-    "php.validate.executablePath": "docker exec -i phpdev php"
-```
-
-## Host integration
-
-In order to call `php`, `phpcbf` or `phpcs` we add some custom scripts into `/usr/local/bin`.
-
-```bash
-#!/bin/bash
-#/usr/local/bin/php
-DOCK=phpdev
-docker exec \
-    -i \
-    $DOCK \
-    php "$@"
-```
-
-```bash
-#!/bin/bash
-#/usr/local/bin/phpcbf
-DOCK=phpdev
-docker exec \
-    -i \
-    $DOCK \
-    phpcbf "$@"
-```
-
-```bash
-#!/bin/bash
-#/usr/local/bin/phpcs
-DOCK=phpdev
-docker exec \
-    -i \
-    $DOCK \
-    phpcs "$@"
-```
-
-```bash
-#!/bin/bash
-#/usr/local/bin/phpstan
-DOCK=phpdev
-docker exec \
-    -i \
-    $DOCK \
-    phpstan "$@"
+    "phpcs.executablePath": "phpcs.bat",
+    "php.executablePath": "php.bat",
+    "php.validate.executablePath": "php.bat"
 ```

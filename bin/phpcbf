@@ -1,0 +1,7 @@
+#!/bin/bash
+#/usr/local/bin/phpcbf
+DOCK=phpdev
+docker exec \
+    -i \
+    $DOCK \
+    phpcbf "$@"

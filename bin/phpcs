@@ -1,0 +1,7 @@
+#!/bin/bash
+#/usr/local/bin/phpcs
+DOCK=phpdev
+docker exec \
+    -i \
+    $DOCK \
+    phpcs "$@"
