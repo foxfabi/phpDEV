@@ -19,7 +19,6 @@ services:
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     container_name: "phpdev"
-    restart: unless-stopped
     environment:
       TZ: "Europe/Zurich"
       SMTP_SERVER: "maildev"
