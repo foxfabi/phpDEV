@@ -15,6 +15,7 @@ RUN apt-get update &&           \
     unzip                       \
     zlib1g-dev                  \
     curl                        \
+    git                         \
     wget                        \
     default-mysql-client        \
     libmcrypt-dev               \
