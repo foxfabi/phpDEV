@@ -1,0 +1,28 @@
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+	"name": "PHP",
+	"dockerComposeFile": "./docker-compose.yml",
+	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
+	"service": "phpdev",
+	// Default path to open when attaching to a new container.
+	"workspaceFolder": "/opt/code",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"php.executablePath": "/usr/local/bin/php",
+		"php.validate.executablePath": "/usr/local/bin/php",
+		"phpcs.executablePath": "/usr/local/bin/phpcs"
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"felixfbecker.php-debug",
+		"ikappas.phpcs",
+		"neilbrayfield.php-docblocker",
+		"usernamehw.errorlens",
+		"pomber.git-file-history",
+		"mhutchie.git-graph",
+		"michelemelluso.gitignore",
+		"eamodio.gitlens",
+		"christian-kohler.path-intellisense",
+		"mutantdino.resourcemonitor"
+	]
+}

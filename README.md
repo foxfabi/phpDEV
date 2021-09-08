@@ -46,6 +46,7 @@ docker exec -i phpdev php example.php
 ## Visual Studio Code integration
 
 See [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+
 * [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
 
 ## Local Host integration
@@ -53,6 +54,7 @@ See [Developing inside a Container](https://code.visualstudio.com/docs/remote/co
 **Add the `bin` folder to your PATH environment variable.**
 
 If you are using powershell add following command into your vscode settings.json:
+
 ```json
     "phpcs.executablePath": "phpcs.bat",
     "php.executablePath": "php.bat",
@@ -60,6 +62,7 @@ If you are using powershell add following command into your vscode settings.json
 ```
 
 If you are using git bash add following command into your vscode settings.json:
+
 ```json
     "phpcs.executablePath": "phpcs",
     "php.executablePath": "php",
