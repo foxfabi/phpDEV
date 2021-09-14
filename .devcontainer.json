@@ -10,7 +10,12 @@
 	"settings": {
 		"php.executablePath": "/usr/local/bin/php",
 		"php.validate.executablePath": "/usr/local/bin/php",
-		"phpcs.executablePath": "/usr/local/bin/phpcs"
+		"phpcs.executablePath": "/usr/local/bin/phpcs",
+		"files.eol": "\n",
+		"telemetry.enableTelemetry": false,
+		"telemetry.enableCrashReporter": false,
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
