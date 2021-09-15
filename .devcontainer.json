@@ -19,6 +19,8 @@
 		"editor.formatOnSave": true,
     "errorLens.onSave": true,
     "files.trimTrailingWhitespace": true,
+    "editor.useTabStops": false,
+    "editor.tabSize": 2,
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
