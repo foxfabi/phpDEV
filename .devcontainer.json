@@ -11,6 +11,10 @@
     "php.executablePath": "/usr/local/bin/php",
     "php.validate.executablePath": "/usr/local/bin/php",
     "phpcs.executablePath": "/usr/local/bin/phpcs",
+    "phpcbf.enable": true,
+    "phpcbf.executablePath": "/usr/local/bin/phpcbf",
+    "phpcbf.documentFormattingProvider": true,
+    "phpcbf.onsave": true,
     "files.eol": "\n",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
@@ -26,6 +30,7 @@
   "extensions": [
     "felixfbecker.php-debug",
     "ikappas.phpcs",
+    "persoderlind.vscode-phpcbf",
     "neilbrayfield.php-docblocker",
     "usernamehw.errorlens",
     "pomber.git-file-history",
