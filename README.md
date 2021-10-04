@@ -23,7 +23,7 @@ Read more:
 
 ### Coding standard
 
-The default coding standard used by PHP_CodeSniffer is the PEAR coding standard. If you wish to check your code against the PSR-12 coding standard, use the `--standard` command line argument: `phpcs --standard=PSR12 /path/to/code-directory`
+The configured coding standard used by PHP_CodeSniffer is the [PSR-12 coding standard](https://www.php-fig.org/psr/psr-12/). To check a file against the PEAR coding standard, use the `--standard` command line argument: `phpcs --standard=PEAR /path/to/code-directory`
 
 ## Useful commands
 
