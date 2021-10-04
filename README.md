@@ -3,10 +3,16 @@
 * [**MailDev**](https://github.com/maildev/maildev) SMTP Server + Web Interface for viewing and testing emails during development.
 * **PHP 7.4.x (CLI)** with Composer, PHP CodeSniffer, phpDocumentor, phpunit and XDebug for development.
 
+The Visual Studio Code [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension lets you use a Docker container as a full-featured development environment. It allows you to open any folder or repository inside a container and take advantage of Visual Studio Code's full feature set. The [devcontainer.json](./.devcontainer.json) file tells VS Code how to access (or create) the development container with well-defined tool and runtime stack.
+
 **Since everything that has to do with the stack, only runs in the container, you have to put the commands into the corresponding container.**
 
 **The local folder `code` is mapped to `/opt/code` in the phpdev container**
-**Once visual studio code is attached to the container, you can also download the files manually**
+
+Read more:
+
+* [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+* [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
 
 ## Installed utilities
 
@@ -14,6 +20,10 @@
 * [phpDocumentor](https://www.phpdoc.org/) is the de-facto documentation application for PHP projects.
 * [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
 * [Xdebug](https://xdebug.org/) - Debugger and Profiler Tool for PHP
+
+### Coding standard
+
+The default coding standard used by PHP_CodeSniffer is the PEAR coding standard. If you wish to check your code against the PSR-12 coding standard, use the `--standard` command line argument: `phpcs --standard=PSR12 /path/to/code-directory`
 
 ## Useful commands
 
@@ -42,12 +52,6 @@ To **execute a PHP script**:
 cd code
 docker exec -i phpdev php example.php
 ```
-
-## Visual Studio Code integration
-
-See [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
-
-* [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
 
 ## Local Host integration
 
