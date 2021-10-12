@@ -90,8 +90,5 @@ RUN docker-php-source extract && \
     echo "log_errors = On" >> $PHP_INI_DIR/conf.d/log.ini && \
     echo "error_log=/dev/stderr" >> $PHP_INI_DIR/conf.d/log.ini && \
     docker-php-source delete
-# ENTRYPOINT ["php-fpm"]
-# CMD [ "/usr/local/bin/php", "-S", "0.0.0.0:7409", "-t", "/var/www/backend/public/"]
-#EXPOSE 7409
-#CMD ["/usr/local/bin/php", "/var/www/backend/public/server.php"]
-# ENTRYPOINT ["start-container"]
+CMD [ "/usr/local/bin/php", "-S", "0.0.0.0:8888", "-t", "/opt/code/"]
+EXPOSE 8888
