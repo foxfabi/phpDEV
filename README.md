@@ -25,6 +25,20 @@ Read more:
 
 The configured coding standard used by PHP_CodeSniffer is the [PSR-12 coding standard](https://www.php-fig.org/psr/psr-12/). To check a file against the PEAR coding standard, use the `--standard` command line argument: `phpcs --standard=PEAR /path/to/code-directory`
 
+## Installed vscode extensions
+
+* [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug): Debug support for PHP with Xdebug
+* [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs): PHP CodeSniffer for Visual Studio Code.
+* [phpcbf](https://marketplace.visualstudio.com/items?itemName=persoderlind.vscode-phpcbf): PHP Code Beautifier and Fixer.
+* [PHP DocBlocker](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker): A simple, dependency free PHP specific DocBlocking package.
+* [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history): Modern, fast and intuitive tool for browsing the history and files in any git repository.
+* [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph): View a Git Graph of your repository, and perform Git actions from the graph.
+* [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore): Add file to .gitignore.
+* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): Supercharge the Git capabilities built into Visual Studio Code.
+* [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Improve highlighting of errors, warnings and other language diagnostics.
+* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense): Visual Studio Code plugin that autocompletes filenames.
+* [Resource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor): Displays current CPU stats, memory/disk consumption, and battery percentage remaining.
+
 ## Useful commands
 
 To start/stop the stack, enter the following command in the terminal:
