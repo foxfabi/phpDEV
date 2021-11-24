@@ -1,0 +1,12 @@
+diff --git a/.docker/Dockerfile b/.docker/Dockerfile
+index 093a509..7c422dc 100644
+--- a/.docker/Dockerfile
++++ b/.docker/Dockerfile
+@@ -33,6 +33,7 @@ RUN apt-get update &&           \
+     --no-install-recommends &&  \
+     apt-get clean &&            \
+     rm -rf /var/lib/apt/lists/*
++RUN docker-php-ext-configure gd --with-jpeg-dir
+ RUN docker-php-ext-install -j$(nproc)   \
+     gd                                  \
+     intl                                \
