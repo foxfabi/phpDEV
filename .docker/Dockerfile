@@ -33,7 +33,7 @@ RUN apt-get update &&           \
     --no-install-recommends &&  \
     apt-get clean &&            \
     rm -rf /var/lib/apt/lists/*
-RUN docker-php-ext-configure gd --with-jpeg-dir
+RUN docker-php-ext-configure gd --with-jpeg=/usr/include/
 RUN docker-php-ext-install -j$(nproc)   \
     gd                                  \
     intl                                \
@@ -44,6 +44,7 @@ RUN docker-php-ext-install -j$(nproc)   \
     opcache                             \
     bcmath                              \
     sockets
+RUN docker-php-ext-enable gd mysqli curl
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /opt/code
