@@ -33,6 +33,7 @@ RUN apt-get update &&           \
     --no-install-recommends &&  \
     apt-get clean &&            \
     rm -rf /var/lib/apt/lists/*
+RUN docker-php-ext-configure gd --with-jpeg-dir
 RUN docker-php-ext-install -j$(nproc)   \
     gd                                  \
     intl                                \
