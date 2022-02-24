@@ -44,7 +44,7 @@ RUN docker-php-ext-install -j$(nproc)   \
     opcache                             \
     bcmath                              \
     sockets
-RUN docker-php-ext-enable gd mysqli curl
+RUN pecl install xdebug; docker-php-ext-enable gd mysqli curl xdebug
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /opt/code
@@ -82,6 +82,7 @@ RUN docker-php-source extract && \
     echo "xdebug.start_with_request = yes" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo "xdebug.client_port = 9000" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo 'xdebug.idekey = "VSCODE"' >> $PHP_INI_DIR/conf.d/xdebug.ini && \
+    echo 'xdebug.discover_client_host = 1' >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     # Sendmail Config
     echo "[sendmail]" >> $PHP_INI_DIR/conf.d/sendmail.ini && \
     echo "smtp_server=${SMTP_SERVER}" >> $PHP_INI_DIR/conf.d/sendmail.ini && \

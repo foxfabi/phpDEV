@@ -6,9 +6,10 @@ services:
     image: djfarrelly/maildev
     container_name: "maildev"
     restart: unless-stopped
+    env_file: ./.env
     ports:
-      - "7025:25"
-      - "7080:80"
+      - "${SMTP_PORT}:25"
+      - "${WEBMAIL_PORT}:80"
 
   phpdev:
     restart: unless-stopped
@@ -18,16 +19,17 @@ services:
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     container_name: "phpdev"
+    env_file: ./.env
     environment:
       TZ: "Europe/Zurich"
       SMTP_SERVER: "maildev"
-      SMTP_PORT: 7025
+      SMTP_PORT: ${SMTP_PORT}
       MAIL_FROM: "webdev@docker.local"
     volumes:
-      - ./.docker/php/msmtprc:/etc/msmtprc:ro
+      - ./.docker/msmtprc:/etc/msmtprc:ro
       - ./code:/opt/code
     ports:
-      - "8888:8888"
+      - "${PHP_PORT}:8888"
     expose:
       - 9000
     links:

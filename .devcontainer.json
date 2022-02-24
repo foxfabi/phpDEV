@@ -28,7 +28,7 @@
   },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-    "felixfbecker.php-debug",
+    "xdebug.php-debug",
     "ikappas.phpcs",
     "persoderlind.vscode-phpcbf",
     "neilbrayfield.php-docblocker",
