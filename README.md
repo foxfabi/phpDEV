@@ -27,7 +27,7 @@ The configured coding standard used by PHP_CodeSniffer is the [PSR-12 coding sta
 
 ## Installed vscode extensions
 
-* [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug): Debug support for PHP with Xdebug
+* [PHP Debug](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug): Debug support for PHP with Xdebug
 * [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs): PHP CodeSniffer for Visual Studio Code.
 * [phpcbf](https://marketplace.visualstudio.com/items?itemName=persoderlind.vscode-phpcbf): PHP Code Beautifier and Fixer.
 * [PHP DocBlocker](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker): A simple, dependency free PHP specific DocBlocking package.
