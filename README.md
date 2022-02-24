@@ -3,9 +3,19 @@
 * [**MailDev**](https://github.com/maildev/maildev) SMTP Server + Web Interface for viewing and testing emails during development.
 * **PHP 7.4.x (CLI)** with Composer, PHP CodeSniffer, phpDocumentor, phpunit and XDebug for development.
 
+## Installation
+
+- Clone or download and extract this repo
+- Rename the `.env.example` file to `.env` and check the contained settings
+- Open the project main folder (the folder containing this README) with vscode
+- Build the docker container with `docker-compose build` and start it with `docker-compose up -d` in the terminal or use the context menu over the `docker-compose.yml` file (right click > compose up) from vscode
+- Keep an eye at bottom right and confirm when you are asked to reopen the project in the dev container
+
+## Remote development
+
 The Visual Studio Code [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension lets you use a Docker container as a full-featured development environment. It allows you to open any folder or repository inside a container and take advantage of Visual Studio Code's full feature set. The [devcontainer.json](./.devcontainer.json) file tells VS Code how to access (or create) the development container with well-defined tool and runtime stack.
 
-**Since everything that has to do with the stack, only runs in the container, you have to put the commands into the corresponding container.**
+**Since everything that has to do with the stack, only runs in the container, you have to put the commands into the corresponding container.** Check the provided wrappers in the folder `./bin/`.
 
 **The local folder `code` is mapped to `/opt/code` in the phpdev container**
 
@@ -69,7 +79,7 @@ docker exec -i phpdev php example.php
 
 ## Local Host integration
 
-**Add the `bin` folder to your PATH environment variable.**
+**Copy the `bin` folder to your local computer and add the local folder to your PATH environment variable.**
 
 If you are using powershell add following command into your vscode settings.json:
 
