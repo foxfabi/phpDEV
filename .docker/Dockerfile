@@ -2,16 +2,21 @@
 FROM composer:1.9.3 AS composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBCONF_NOWARNINGS="yes"
+
 FROM php:7.4-fpm-buster AS base
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV LC_ALL C.UTF-8
 #RUN pwd && ls -la
 RUN apt-get update &&           \
     apt-get install -y          \
+    apt-utils                   \
     ca-certificates             \
     libcurl4-openssl-dev        \
     libssl-dev                  \
     supervisor                  \
+    cron                        \
     unzip                       \
     zlib1g-dev                  \
     curl                        \
