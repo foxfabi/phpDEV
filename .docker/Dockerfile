@@ -81,10 +81,14 @@ RUN apt-get update && apt-get install -y msmtp msmtp-mta mailutils
 RUN docker-php-source extract && \
     cp '/usr/src/php/php.ini-development' $PHP_INI_DIR/php.ini && \
     echo "date.timezone=${TZ}" >> $PHP_INI_DIR/conf.d/timezone.ini && \
+    # Increase file upload size
+    echo "upload_max_filesize = 30M" >> $PHP_INI_DIR/conf.d/uploads.ini && \
+    echo "post_max_size = 30M" >> $PHP_INI_DIR/conf.d/uploads.ini && \
+    echo "memory_limit = 256M" >> $PHP_INI_DIR/conf.d/uploads.ini && \
     # XDEBUG PHP Config
     echo "[xdebug]" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo "xdebug.mode=debug" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
-    echo "xdebug.start_with_request = yes" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
+    echo "xdebug.start_with_request = trigger" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo "xdebug.client_port = 9000" >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo 'xdebug.idekey = "VSCODE"' >> $PHP_INI_DIR/conf.d/xdebug.ini && \
     echo 'xdebug.discover_client_host = 1' >> $PHP_INI_DIR/conf.d/xdebug.ini && \
@@ -96,7 +100,7 @@ RUN docker-php-source extract && \
     echo "sendmail_path = \"/usr/bin/msmtp -C /etc/msmtprc -t\"" >> $PHP_INI_DIR/conf.d/sendmail.ini && \
     # Log Config
     echo "log_errors = On" >> $PHP_INI_DIR/conf.d/log.ini && \
-    echo "error_log=/dev/stderr" >> $PHP_INI_DIR/conf.d/log.ini && \
+    echo "error_log=/opt/code/php-errors.log" >> $PHP_INI_DIR/conf.d/log.ini && \
     docker-php-source delete
 CMD [ "/usr/local/bin/php", "-S", "0.0.0.0:8888", "-t", "/opt/code/"]
 EXPOSE 8888

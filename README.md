@@ -1,7 +1,7 @@
 # PHP Development Environment
 
-* [**MailDev**](https://github.com/maildev/maildev) SMTP Server + Web Interface for viewing and testing emails during development.
-* **PHP 7.4.x (CLI)** with Composer, PHP CodeSniffer, phpDocumentor, phpunit and XDebug for development.
+- [**MailDev**](https://github.com/maildev/maildev) SMTP Server + Web Interface for viewing and testing emails during development.
+- **PHP 7.4.x (CLI)** with Composer, PHP CodeSniffer, phpDocumentor, phpunit and XDebug for development.
 
 ## Installation
 
@@ -21,35 +21,43 @@ The Visual Studio Code [Remote - Containers](https://marketplace.visualstudio.co
 
 Read more:
 
-* [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
-* [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
+- [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+- [Attach to a running container](https://code.visualstudio.com/docs/remote/attach-container)
 
 ## Installed utilities
 
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a set of two PHP scripts; the main `phpcs` script that tokenizes PHP, JavaScript and CSS files to detect violations of a defined coding standard, and a second `phpcbf` script to automatically correct coding standard violations.
-* [phpDocumentor](https://www.phpdoc.org/) is the de-facto documentation application for PHP projects.
-* [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
-* [Xdebug](https://xdebug.org/) - Debugger and Profiler Tool for PHP
+- [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a set of two PHP scripts; the main `phpcs` script that tokenizes PHP, JavaScript and CSS files to detect violations of a defined coding standard, and a second `phpcbf` script to automatically correct coding standard violations.
+- [phpDocumentor](https://www.phpdoc.org/) is the de-facto documentation application for PHP projects.
+- [PHPUnit](https://phpunit.de/) is a programmer-oriented testing framework for PHP.
+- [Xdebug](https://xdebug.org/) - Debugger and Profiler Tool for PHP
 
 ### Coding standard
 
 The configured coding standard used by PHP_CodeSniffer is the [PSR-12 coding standard](https://www.php-fig.org/psr/psr-12/). To check a file against the PEAR coding standard, use the `--standard` command line argument: `phpcs --standard=PEAR /path/to/code-directory`
 
+### XDebug trigger
+
+The name of the trigger is XDEBUG_TRIGGER, and Xdebug checks for its presence in either $\_ENV (environment variable), $\_GET or $\_POST variable, or $\_COOKIE (HTTP cookie name).
+
 ## Installed vscode extensions
 
-* [PHP Debug](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug): Debug support for PHP with Xdebug
-* [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs): PHP CodeSniffer for Visual Studio Code.
-* [phpcbf](https://marketplace.visualstudio.com/items?itemName=persoderlind.vscode-phpcbf): PHP Code Beautifier and Fixer.
-* [PHP DocBlocker](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker): A simple, dependency free PHP specific DocBlocking package.
-* [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history): Modern, fast and intuitive tool for browsing the history and files in any git repository.
-* [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph): View a Git Graph of your repository, and perform Git actions from the graph.
-* [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore): Add file to .gitignore.
-* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): Supercharge the Git capabilities built into Visual Studio Code.
-* [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Improve highlighting of errors, warnings and other language diagnostics.
-* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense): Visual Studio Code plugin that autocompletes filenames.
-* [Resource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor): Displays current CPU stats, memory/disk consumption, and battery percentage remaining.
+- [PHP Debug](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug): Debug support for PHP with Xdebug
+- [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs): PHP CodeSniffer for Visual Studio Code.
+- [phpcbf](https://marketplace.visualstudio.com/items?itemName=persoderlind.vscode-phpcbf): PHP Code Beautifier and Fixer.
+- [PHP DocBlocker](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker): A simple, dependency free PHP specific DocBlocking package.
+- [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history): Modern, fast and intuitive tool for browsing the history and files in any git repository.
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph): View a Git Graph of your repository, and perform Git actions from the graph.
+- [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore): Add file to .gitignore.
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): Supercharge the Git capabilities built into Visual Studio Code.
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Improve highlighting of errors, warnings and other language diagnostics.
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense): Visual Studio Code plugin that autocompletes filenames.
+- [Resource Monitor](https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor): Displays current CPU stats, memory/disk consumption, and battery percentage remaining.
 
 ## Useful commands
+
+To build the container, enter the following command in the terminal:
+
+`docker-compose build --compress --force-rm --no-cache`
 
 To start/stop the stack, enter the following command in the terminal:
 
